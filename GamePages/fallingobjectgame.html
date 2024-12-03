@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixelPlayground</title>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Pixel Playground</a></h1>
+    </header>
+    <main>
+        <h2>Catch the Falling Objects</h2>
+        <canvas id="pygame-canvas"></canvas>
+    </main>
+    <script>
+        // Initialize pygame.js
+        async function runGame() {
+            const { run } = await loadPygameWasm(); // Loads the pygame.js runtime
+            run({
+                canvas: "#pygame-canvas", // Attach to this canvas
+                scriptUrl: "Games/fallingObjectsGame/falling_objects_game.py" //Add path to game file
+            })
+        }
+    </script>
+</body>
+</html>
